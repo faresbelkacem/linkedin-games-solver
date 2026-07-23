@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Games Solver",
+  "version": "1.0.0",
+  "description": "Solves LinkedIn's daily games (Zip, Patches). Shows the solution as an overlay to trace, or plays it on the board.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Games Solver",
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["https://www.linkedin.com/games/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": [
+        "src/core/registry.js",
+        "src/core/dom.js",
+        "src/core/grid.js",
+        "src/core/overlay.js",
+        "src/core/autoplay.js",
+        "src/core/ui.js",
+        "src/games/zip/solver.js",
+        "src/games/zip/zip.js",
+        "src/games/patches/solver.js",
+        "src/games/patches/patches.js",
+        "src/core/content.js"
+      ],
+      "css": ["src/styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

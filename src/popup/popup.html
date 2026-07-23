@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Games Solver</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <svg viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true">
+          <path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-2 .9-2 2v3.8h1.5c1.5 0 2.7 1.2 2.7 2.7S5 16.2 3.5 16.2H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.5 1.2-2.7 2.7-2.7s2.7 1.2 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z" />
+        </svg>
+        <span class="title">Games Solver</span>
+      </div>
+      <span class="chip" id="chip" data-state="none">No game</span>
+    </header>
+
+    <div class="body">
+      <p class="label">Mode</p>
+      <div class="seg" id="mode">
+        <button data-mode="overlay" aria-pressed="true">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3">
+            <path d="M3 18 L8 11 L14 15 L21 5" />
+          </svg>
+          Overlay
+        </button>
+        <button data-mode="autoplay" aria-pressed="false">
+          <svg class="ic" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+            <path d="M8 5 L19 12 L8 19 Z" />
+          </svg>
+          Auto-play
+        </button>
+      </div>
+      <p id="modeDesc"></p>
+
+      <div class="speed">
+        <div class="top">
+          <span class="label">Draw time</span>
+          <span id="speedVal">2.00 s</span>
+        </div>
+        <input type="range" id="speed" min="0" max="6000" step="250" value="2000" aria-label="Draw time" />
+        <div class="ticks"><span>Instant</span><span>Slower</span></div>
+      </div>
+
+      <div class="actions">
+        <button id="solve">Solve</button>
+        <button id="clear">Clear</button>
+      </div>
+
+      <div id="status">Open a LinkedIn game to start.</div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

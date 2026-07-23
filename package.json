@@ -1,0 +1,10 @@
+{
+  "name": "linkedin-games-solver",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browser extension that solves LinkedIn's daily games (Zip, Patches).",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\""
+  }
+}
